@@ -5,6 +5,9 @@
  */
 package com.bcprojekt.controller;
 
+import com.bcprojekt.dao.ProductDao;
+import com.bcprojekt.model.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +20,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 
 public class ProductController {
+    
+   
     
     @RequestMapping(value = "/add")
     public ModelAndView add (){
@@ -35,9 +40,11 @@ public class ProductController {
     @RequestMapping(value = "/save" , method =RequestMethod.POST)
     public String save (Product product){
         
-        System.out.println(product.toString());
         
+       //System.out.println(product.toString());
       
+        
+        
         
         return "info";
         

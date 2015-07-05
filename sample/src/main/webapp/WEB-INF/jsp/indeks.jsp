@@ -48,7 +48,7 @@
         </tr>
        
         <tr>
-            <td colspan="2"><a href='http://localhost:8080/bcprojekt/index' title="Register now">Register</a></td>
+            <td colspan="2"><a href='./index.htm' title="Register now">Register</a></td>
         </tr>
     </table>
 </form>

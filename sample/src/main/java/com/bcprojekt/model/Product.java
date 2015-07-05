@@ -8,7 +8,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.bcprojekt.controller;
+package com.bcprojekt.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 
@@ -16,12 +23,13 @@ package com.bcprojekt.controller;
  *
  * @author Matt
  */
-
+@Table(name="produkty")
+@Entity
 public class Product {
-    
-    
-  
-    private int id;
+    @Id
+    @Column
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     
     private String name;
     

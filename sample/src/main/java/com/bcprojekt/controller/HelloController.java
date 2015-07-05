@@ -7,7 +7,7 @@ package com.bcprojekt.controller;
 
 
 
-import com.bcprojekt.model.UserModel;
+import com.bcprojekt.model.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -48,7 +48,7 @@ public class HelloController {
         } else {
             //Jesli nie poprawne wiadomosc
             model.addObject("message", "Login albo haslo niepoprawne");
-            model.setViewName("info1");
+            model.setViewName("wrongdata");
             
         }
         

@@ -6,13 +6,13 @@
 package com.bcprojekt.dao;
 
 import com.bcprojekt.model.Product;
-import org.hibernate.type.IntegerType;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author Matt
  */
-public interface ProductDao extends CrudRepository <Product, IntegerType> {
+
+public interface ProductDao extends CrudRepository <Product, Integer> {
     
 }

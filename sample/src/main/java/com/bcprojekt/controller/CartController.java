@@ -31,6 +31,8 @@ public class CartController {
         
     }
     //
+    
+    
     @RequestMapping(value = "/addcart" , method = RequestMethod.POST)
     public String addcart (@ModelAttribute("product")Product p , HttpSession session){
         
