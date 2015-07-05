@@ -45,33 +45,7 @@ public class CartController {
          
      }
      
-     else{
-         
-         boolean flaga = false;
-         
-         for(Product product : lista){
-             
-             if(product.getName() == p.getName())
-             
-             {
-             
-                 
-             product.setNumber((short) (product.getNumber()+1));
-             flaga = true;
-             break;
-             
-             }
-             
-             if (flaga == false)
-                 
-                 lista.add(p);
-             
-             
-             
-         }
-         
-         
-     }
+    
 
     
     
