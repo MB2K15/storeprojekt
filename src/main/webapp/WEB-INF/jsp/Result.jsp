@@ -1,6 +1,6 @@
 <%-- 
-    Document   : info
-    Created on : 2015-06-19, 13:29:42
+    Document   : Result
+    Created on : 2015-07-16, 14:38:44
     Author     : Matt
 --%>
 
@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
-        <title>JSP Page</title>
+        <title>RESULT</title>
     </head>
     <body>
-        <h1>Saving changes</h1>
+        <h1>You're message has been sent...</h1>
     </body>
 </html>

@@ -44,7 +44,7 @@ public class HelloController {
         if (checkLoginAndPassword(login, password)) {
             //Jesli poprawne stosowna wiadomosc
             model.addObject("message", "Strona powitalna!");
-            model.setViewName("add");//view set
+            model.setViewName("shopping");//view set
         } else {
             //Jesli nie poprawne wiadomosc
             model.addObject("message", "Login albo haslo niepoprawne");

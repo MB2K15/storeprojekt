@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author Matt
  */
 @Controller
-@RequestMapping(value = "/scart")
 public class CartController {
 
     @RequestMapping(value = "/form")
@@ -45,6 +45,30 @@ public class CartController {
         session.setAttribute("wszystko", getAll(lista));
         return "product";
     }
+    
+     @RequestMapping(value = "/remove", method = RequestMethod.GET)
+     public String remove(@RequestParam(value="name") String name , HttpSession session){
+          List<Product> lista = (List<Product>) session.getAttribute("product");
+          
+         if(lista !=null){
+             
+             for(Product product : lista) {
+                
+                 if(product.getName() == name){
+                     
+                     
+                     lista.remove(product);
+                     break;
+                     
+                 }
+                 
+                 }
+             
+         }
+         session.setAttribute("product", lista);
+         session.setAttribute("wszystko", getAll(lista));
+         return "product";
+     } 
 
     public float getAll(List<Product> lista) {
         float wszystko = 0;
@@ -59,6 +83,7 @@ public class CartController {
 
         return wszystko;
     }
-
+    
+    
 
 }

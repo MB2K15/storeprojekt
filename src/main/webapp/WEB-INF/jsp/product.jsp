@@ -23,6 +23,11 @@
             <td>Kategoria:${p.category}</td>
             <td>Cena:${p.price}</td>
             <td>Iloœæ:${p.number}</td>
+           <td>
+               <a href="./remove.htm?name=${p.name}"
+                  onclick="return confirm('Are you sure ??')"> Remove product   
+               </a>
+           </td>
         </tr>
     </c:forEach>
 

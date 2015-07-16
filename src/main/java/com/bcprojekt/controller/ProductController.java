@@ -21,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class ProductController {
     
-   
+   //private ProductDao productdao;
     
     @RequestMapping(value = "/add")
     public ModelAndView add (){
