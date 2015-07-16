@@ -1,13 +1,10 @@
 package com.bcprojekt.dao;
 
+import com.bcprojekt.model.UserModel;
+import org.springframework.data.repository.CrudRepository;
+
 import java.util.List;
 
-import com.bcprojekt.model.UserModel;
+public interface UserDao extends CrudRepository<UserModel, Integer> {
 
-public interface UserDao {
-	public void add(UserModel usr);
-	public void edit(UserModel usr);
-	public void delete(int usrId);
-	public UserModel getUser(int usrId);
-	public List getAllUsers();
 }

@@ -24,7 +24,7 @@
             <td>Cena:${p.price}</td>
             <td>Iloœæ:${p.number}</td>
            <td>
-               <a href="./remove.htm?name=${p.name}"
+               <a href="./remove.htm?productId=${p.id}"
                   onclick="return confirm('Are you sure ??')"> Remove product   
                </a>
            </td>

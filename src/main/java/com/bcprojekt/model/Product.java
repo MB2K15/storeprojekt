@@ -10,59 +10,50 @@
  */
 package com.bcprojekt.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.*;
 
 
 /**
- *
  * @author Matt
  */
-@Table(name="produkty")
+@Table(name = "produkty")
 @Entity
 public class Product {
     @Id
     @Column
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    
-    private String name;
-    
-    private String category;
-    
-    private float price;
-    
-    private short number; 
-    
-   
 
-  
+    private String name;
+
+    private String category;
+
+    private float price;
+
+    private short number;
+
+
     public String getName() {
-        
-        
+
+
         return name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     public void setName(String name) {
-        
+
         this.name = name;
     }
 
     public String getCategory() {
-        
+
         return category;
     }
 
@@ -87,8 +78,6 @@ public class Product {
     }
 
 
-   
-   
     @Override
     public String toString() {
         return "Product{" +
@@ -97,8 +86,8 @@ public class Product {
                 ", price=" + price +
                 ", number=" + number +
                 '}';
-        
+
     }
-    
-    
+
+
 }

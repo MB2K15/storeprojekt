@@ -9,5 +9,5 @@ public interface UserService {
 	public void edit(UserModel usr);
 	public void delete(int usrId);
 	public UserModel getUser(int usrId);
-	public List getAllUsers();
+	public Iterable<UserModel> getAllUsers();
 }

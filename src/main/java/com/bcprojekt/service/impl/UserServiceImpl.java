@@ -1,7 +1,5 @@
 package com.bcprojekt.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,12 +14,12 @@ public class UserServiceImpl implements UserService {
 	private UserDao usrDao;
 	@Transactional
 	public void add(UserModel usr) {
-		usrDao.add(usr);
+		usrDao.save(usr);
 	}
 
 	@Transactional
 	public void edit(UserModel usr) {
-		usrDao.edit(usr);
+		usrDao.save(usr);
 	}
 
 	@Transactional
@@ -31,12 +29,12 @@ public class UserServiceImpl implements UserService {
 
 	@Transactional
 	public UserModel getUser(int usrId) {
-		return usrDao.getUser(usrId);
+		return usrDao.findOne(usrId);
 	}
 
 	@Transactional
-	public List getAllUsers() {
-		return usrDao.getAllUsers();
+	public Iterable<UserModel> getAllUsers() {
+		return usrDao.findAll();
 	}
 
 }

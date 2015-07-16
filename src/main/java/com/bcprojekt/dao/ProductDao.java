@@ -13,7 +13,7 @@ import org.springframework.data.repository.CrudRepository;
  * @author Matt
  */
 
-public interface ProductDao extends CrudRepository <Product, Integer> {
+public interface ProductDao extends CrudRepository<Product, Integer> {
     
     
     
