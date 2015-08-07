@@ -20,6 +20,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.mail.MailSender;
 
 /**
  * @author Matt
@@ -50,8 +53,10 @@ public class CartController {
         session.setAttribute("wszystko", getAll(lista));
         return "product";
     }
+    //Object o;
+   
 
-
+//get i post
     @RequestMapping(value = "/remove", method = RequestMethod.GET)
     public String remove(@RequestParam(value = "productId") Integer productId, HttpSession session) {
         List<Product> lista = (List<Product>) session.getAttribute("product");

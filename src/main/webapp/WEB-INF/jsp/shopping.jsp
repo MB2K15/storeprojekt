@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
-        <title>MEDICAL STORE</title>
+        <title>EXAMPLE STORE</title>
         
         <style>
             
@@ -22,12 +22,19 @@
     color:white;
     background-color: blue;   
             }
-            
+            #content{
+                
+                margin-left: auto;
+                margin-right: auto;
+                width: 1000px;
+                min-height: 200px;
+            } 
             
             
         </style>
     </head>
     <body>
+        <div id="content">
         <div id="welcome">
         <h1>Witam w sklepie medycznym</h1>
         </div>
@@ -42,8 +49,9 @@
             </tr>
             <tr>
             <td>Kontakt</td>
-            <td><a href="./Emailform">Formularz kontaktowy</a></td>
+            <td><a href="./send">Formularz kontaktowy</a></td>
             </tr>
         </table>
+        </div>
     </body>
 </html>

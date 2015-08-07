@@ -41,7 +41,7 @@ public class ProductController {
     public String save (Product product){
         
         
-       //System.out.println(product.toString());
+       System.out.println(product.toString());
       
         
         

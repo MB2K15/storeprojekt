@@ -5,16 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="windows-1250"%>
+<%@taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
         <title>SENDING EMAIL</title>
     </head>
-    <body>
+    <body> 
         
         <h1>Sending...</h1>
-        <form method="post" action="sendmail">
+        <f:form action="send" method="post">
             <table>
                 <tr>
                     <td>To:</td>
@@ -30,10 +31,10 @@
                 </tr>               
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="Send E-mail" />
+                        <input type="button" name="submit" value="Send E-mail" />
                     </td>
                 </tr>
             </table>
-        </form>
+       </f:form>
     </body>
 </html>

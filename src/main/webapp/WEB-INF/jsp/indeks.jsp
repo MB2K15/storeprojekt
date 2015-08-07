@@ -19,13 +19,13 @@
         -webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
         
-	box-shadow:10px 10px 50px red;
+	box-shadow:10px 10px 50px black;
         
 	
 }           
     </style>
 </head>
-<body>
+<body bgcolor='red'>
     
     
 

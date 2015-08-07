@@ -14,7 +14,8 @@
 </head>
 <body>
 <h1>Twój koszyk:</h1>
-<table border="1" width="1000px" cellpadding="20px" style="border-collapse: collapse">
+<center>
+<table border="2" width="1000px" cellpadding="20px" style="border-collapse: collapse">
 
     <c:forEach items='<%= request.getSession().getAttribute("product")%>' var="p">
 
@@ -39,5 +40,6 @@
 </table>
 
 <a href="./form.htm">Continue shopping....</a>
+</center>
 </body>
 </html>

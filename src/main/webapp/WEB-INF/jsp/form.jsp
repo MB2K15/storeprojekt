@@ -27,7 +27,7 @@
     <body>
         <div id="container">
         <f:form modelAttribute="product" action="addcart" 
-                method="POST" >
+                method="post" >
             
             <table border = "1">
             <tr>    
