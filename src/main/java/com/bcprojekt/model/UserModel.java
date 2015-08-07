@@ -1,11 +1,6 @@
 package com.bcprojekt.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Table(name = "usermodel")
@@ -25,14 +20,7 @@ public class UserModel {
 	
 	public UserModel(){}
 	
-	public UserModel(int usrId, String usrName, String usrPasswd, String usrDesc) {
-		super();
-		this.userid = usrId;
-		this.usrName = usrName;
-		this.usrPasswd = usrPasswd;
-		this.usrDesc = usrDesc;
-	}
-	public int getUsrId() {
+		public int getUsrId() {
 		return userid;
 	}
 	public void setUsrId(int usrId) {

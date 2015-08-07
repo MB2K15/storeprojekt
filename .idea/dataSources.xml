@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3202544363">
+    <data-source source="LOCAL" name="plasma.persistence" uuid="68377475-044d-4609-a8b3-66862901489d">
+      <jdbc-driver>${jdbc.driverClassName}</jdbc-driver>
+      <jdbc-url>${jdbc.databaseurl}</jdbc-url>
+      <user-name>${jdbc.username}</user-name>
+      <user-password>df8edfd1dfc0dfcedfc8dfc9df84dfdadfcbdfd9dfd9dfdddfc5dfd8dfcedfd7</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

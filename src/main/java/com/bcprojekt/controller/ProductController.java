@@ -14,46 +14,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- *
  * @author Matt
  */
 @Controller
 
 public class ProductController {
-    
-   //private ProductDao productdao;
-    
+
+    @Autowired
+    private ProductDao productDao;
+
+    @RequestMapping(value = "/shopping")
+    public String shopping(ModelAndView modelMap) {
+        Iterable<Product> all = productDao.findAll();
+        modelMap.addObject("products", all);
+        return "shopping";
+    }
+
     @RequestMapping(value = "/add")
-    public ModelAndView add (){
-    
-        
-        
+    public ModelAndView add() {
         ModelAndView model = new ModelAndView("/add");
         model.addObject("product", new Product());
-       
         return model;
-        
     }
-    
-    
-    
-    @RequestMapping(value = "/save" , method =RequestMethod.POST)
-    public String save (Product product){
-        
-        
-       System.out.println(product.toString());
-      
-        
-        
-        
+
+
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String save(Product product) {
+        System.out.println(product.toString());
         return "info";
-        
     }
-    
-    
-    
-    
-    
-    
-    
+
+
 }

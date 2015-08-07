@@ -1,4 +1,5 @@
-<%-- 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
     Document   : shopping
     Created on : 2015-07-14, 17:08:26
     Author     : Matt
@@ -53,5 +54,21 @@
             </tr>
         </table>
         </div>
+
+    <h3>Koszyk</h3>
+    <table>
+        <thead>
+        <td>Name</td>
+        <td>Price</td>
+        </thead>
+    <c:forEach items='<%= request.getSession().getAttribute("products")%>' var="product">
+        <tr>
+            <td>{product.name}</td>
+            <td>{product.price}</td>
+        </tr>
+
+    </c:forEach>
+    </table>
+
     </body>
 </html>
