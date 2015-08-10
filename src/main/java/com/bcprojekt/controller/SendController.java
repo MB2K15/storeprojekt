@@ -25,14 +25,14 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Matt
  */
 @Controller
+@RequestMapping("/send")
 public class SendController {
 
 
     @Autowired
     private JavaMailSender mailSender;
 
-    @RequestMapping(value = "send" , method = RequestMethod.POST)
-    
+    @RequestMapping( method = RequestMethod.POST)
     public String doSendEmail(HttpServletRequest request) {
 
         

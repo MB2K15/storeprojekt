@@ -50,10 +50,10 @@
             </tr>
             <tr>
             <td>Kontakt</td>
-            <td><a href="./send">Formularz kontaktowy</a></td>
+            <td><a href='./Emailsend'>Formularz kontaktowy</a></td>
             </tr>
         </table>
-        </div>
+       
 
     <h3>Koszyk</h3>
     <table>
@@ -61,14 +61,14 @@
         <td>Name</td>
         <td>Price</td>
         </thead>
-    <c:forEach items='<%= request.getSession().getAttribute("products")%>' var="product">
+    <c:forEach items='<%= request.getSession().getAttribute("products")%>' var="prod">
         <tr>
-            <td>{product.name}</td>
-            <td>{product.price}</td>
+            <td>${prod.name}</td>
+            <td>${prod.price}</td>
         </tr>
 
     </c:forEach>
     </table>
-
+ </div>
     </body>
 </html>
