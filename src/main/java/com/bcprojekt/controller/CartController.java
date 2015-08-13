@@ -40,6 +40,18 @@ public class CartController {
         return "form";
     }
 
+    @RequestMapping(value = "/addtocart", method = RequestMethod.POST)
+    public String addToCart(@RequestParam(value = "productId") Integer productId, HttpSession session) {
+        List<Product> lista = (List<Product>) session.getAttribute("lista");
+        if (lista == null) {
+            lista = new ArrayList<>();
+            session.setAttribute("lista",lista);
+        }
+        Product product = productDao.findOne(productId);
+        lista.add(product);
+        return "cart";
+    }
+
 
     @RequestMapping(value = "/addcart", method = RequestMethod.POST)
     public String addcart(@ModelAttribute("product") Product p, HttpSession session) {

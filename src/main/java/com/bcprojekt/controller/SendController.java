@@ -47,7 +47,7 @@ public class SendController {
         email.setText(wiadomosc);
 
         
-    mailSender.send(email);
+  //  mailSender.send(email);
 
         
     

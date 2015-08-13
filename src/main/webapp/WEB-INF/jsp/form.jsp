@@ -25,6 +25,7 @@
             </style>
     </head>
     <body>
+    <h1>Sk³ad sklepu</h1>
         <div id="container">
         <f:form modelAttribute="product" action="addcart" 
                 method="post" >

@@ -13,24 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import static java.util.Arrays.asList;
+
 /**
  * @author Matt
  */
 @Controller
-
 public class ProductController {
 
-    @Autowired
-    private ProductDao productDao;
-
-    @RequestMapping(value = "/shopping")
-    public String shopping(ModelAndView modelMap) {
-        Iterable<Product> all = productDao.findAll();
-        modelMap.addObject("products", all);
-        return "shopping";
-    }
-
-    @RequestMapping(value = "/add")
+      @RequestMapping(value = "/add")
     public ModelAndView add() {
         ModelAndView model = new ModelAndView("/add");
         model.addObject("product", new Product());

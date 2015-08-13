@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "usermodel")
 @Entity
 public class UserModel {
-	
+
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -17,9 +17,9 @@ public class UserModel {
 	private String usrPasswd;
 	@Column
 	private String usrDesc;
-	
+
 	public UserModel(){}
-	
+
 		public int getUsrId() {
 		return userid;
 	}
@@ -45,5 +45,5 @@ public class UserModel {
 		this.usrDesc = usrDesc;
 	}
 
-	
+
 }
