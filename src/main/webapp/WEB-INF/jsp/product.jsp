@@ -37,6 +37,11 @@
             Total:$ <%= request.getSession().getAttribute("wszystko")%>
         </td>
     </tr>
+    <tr>
+        <td>
+            <a href="./shopping.htm">Powrót do menu</a>
+            </td>
+    </tr>
 </table>
 
 <a href="./form.htm">Continue shopping....</a>

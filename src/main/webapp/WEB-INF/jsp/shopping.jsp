@@ -37,7 +37,7 @@
     </div>
     <table>
         <tr>
-            <td>Przejdü do zakupu towaru</td>
+            <td>Dodaj produkty na magazyn</td>
             <td><a href="./form">Start</a></td>
         </tr>
         <tr>
@@ -60,12 +60,13 @@
             <tr>
                 <td>${prod.name}</td>
                 <td>${prod.price}</td>
-                <td>${prod.id}</td>
+                
 
                 <td>
                     <form action="addtocart" method="post">
                         <input hidden="true" name="productId" value="${prod.id}"/>
                         <button>Dodaj do koszyka</button>
+                        
                     </form>
                 </td>
             </tr>

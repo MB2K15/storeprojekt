@@ -12,6 +12,6 @@
         <title>RESULT</title>
     </head>
     <body>
-        <h1>You're message has been sent...</h1>
+        <h1>Adding new user succesfull</h1>
     </body>
 </html>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html" pageEncoding="windows-1250"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -9,16 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Login | E-Shopper</title>
-
-
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="/resources/css/font-awesome.min.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/prettyPhoto.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/price-range.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/animate.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
-    <link href="<c:url value="/resources/css/responsive.css"/>" rel="stylesheet">
+    <title>Cart | E-Shopper</title>
+    <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="resources/css/font-awesome.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="resources/css/prettyPhoto.css"/>" rel="stylesheet">
+    <link href="<c:url value="resources/css/price-range.css"/>" rel="stylesheet">
+    <link href= "<c:url value="resources/css/animate.css"/>" rel="stylesheet">
+    <link href="<c:url value="resources/css/main.css" />"rel="stylesheet">
+    <link href="<c:url value="resources/css/responsive.css"/>" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -63,7 +60,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.html"><img src="resources/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -95,8 +92,8 @@
 								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="./upcart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="./test" class="active"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="cart.html" class="active"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -124,8 +121,8 @@
                                         <li><a href="shop.html">Products</a></li>
 										<li><a href="product-details.html">Product Details</a></li> 
 										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="test.jsp" class="active">Login</a></li>
+										<li><a href="cart.html" class="active">Cart</a></li> 
+										<li><a href="login.html">Login</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
@@ -139,48 +136,158 @@
 							</ul>
 						</div>
 					</div>
-					
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search"/>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div><!--/header-bottom-->
 	</header><!--/header-->
-	
-	<section id="form"><!--form-->
+
+	<section id="cart_items">
 		<div class="container">
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+				  <li><a href="#">Home</a></li>
+				  <li class="active">Shopping Cart</li>
+				</ol>
+			</div>
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Item</td>
+							<td class="description"></td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+                                            <c:forEach items='<%= request.getSession().getAttribute("lista")%>' var="p">
+						<tr>
+							<td class="cart_product">
+								<a href=""><img src="resources/images/cart/medica.jpg" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">${p.name}</a></h4>
+								<p>WEB ID :${p.id}</p>
+							</td>
+							<td class="cart_price">
+								<p>${p.price}</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<p>${p.number}</p>
+								</div>
+							
+							<td class="cart_delete"> <a href="./remove.htm?productId=${p.id}"
+                  onclick="return confirm('Are you sure ??')"> Remove product   
+               </a>
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+							</td>
+                                                        
+     
+        </c:forEach>
+       <tr>
+           <td>
+               <p>Total : $<%=request.getSession().getAttribute("wszystko")%></p>
+               </td>
+           
+           </tr>
+           <tr>
+               <td>
+                   <p>
+                       <a href="./Order.htm" target="blank">ZAMAWIAM</a>
+                   <p>
+               </td>
+           </tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	<section id="do_action">
+		<div class="container">
+			<div class="heading">
+				<h3>What would you like to do next?</h3>
+				<p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+			</div>
 			<div class="row">
-				<div class="col-sm-4 col-sm-offset-1">
-					<div class="login-form"><!--login form-->
-						<h2>Login to your account</h2>
-                                                
-						<form action="login" method="post">
-                                                    <input type='text' placeholder="Name"name='username'>
-                                                    <input type='password' placeholder="Enter your password"name='password'/>
-							<span>
-								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
-							</span>
-							<button type="submit" class="btn btn-default">Login</button>
-						</form>
-					</div><!--/login form-->
+				<div class="col-sm-6">
+					<div class="chose_area">
+						<ul class="user_option">
+							<li>
+								<input type="checkbox">
+								<label>Use Coupon Code</label>
+							</li>
+							<li>
+								<input type="checkbox">
+								<label>Use Gift Voucher</label>
+							</li>
+							<li>
+								<input type="checkbox">
+								<label>Estimate Shipping & Taxes</label>
+							</li>
+						</ul>
+						<ul class="user_info">
+							<li class="single_field">
+								<label>Country:</label>
+								<select>
+									<option>United States</option>
+									<option>Bangladesh</option>
+									<option>UK</option>
+									<option>India</option>
+									<option>Pakistan</option>
+									<option>Ucrane</option>
+									<option>Canada</option>
+									<option>Dubai</option>
+								</select>
+								
+							</li>
+							<li class="single_field">
+								<label>Region / State:</label>
+								<select>
+									<option>Select</option>
+									<option>Dhaka</option>
+									<option>London</option>
+									<option>Dillih</option>
+									<option>Lahore</option>
+									<option>Alaska</option>
+									<option>Canada</option>
+									<option>Dubai</option>
+								</select>
+							
+							</li>
+							<li class="single_field zip-field">
+								<label>Zip Code:</label>
+								<input type="text">
+							</li>
+						</ul>
+						<a class="btn btn-default update" href="">Get Quotes</a>
+						<a class="btn btn-default check_out" href="">Continue</a>
+					</div>
 				</div>
-				<div class="col-sm-1">
-					<h2 class="or">OR</h2>
-				</div>
-				<div class="col-sm-4">
-					<div class="signup-form"><!--sign up form-->
-						<h2>New User Signup!</h2>
-						<form action="user" method="post" commandName="usr">
-                                                    <input type='text' placeholder="Name" name="usrName">
-                                                    <input type='password' placeholder="Password" name="usrPasswd"/>
-                                                    <button type="submit" name="action" class="btn btn-default">Add new </button>
-						</form>
-					</div><!--/sign up form-->
+				<div class="col-sm-6">
+					<div class="total_area">
+						<ul>
+							<li>Cart Sub Total <span>Total : $<%=request.getSession().getAttribute("wszystko")%></span></li>
+							<li>Eco Tax <span>$2</span></li>
+							<li>Shipping Cost <span>Free</span></li>
+							<li>Total <span>$61</span></li>
+						</ul>
+							<a class="btn btn-default update" href="">Update</a>
+							<a class="btn btn-default check_out" href="">Check Out</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</section><!--/form-->
-	
-	
+	</section><!--/#do_action-->
+
 	<footer id="footer"><!--Footer-->
 		<div class="footer-top">
 			<div class="container">
@@ -273,7 +380,7 @@
 								<li><a href="">Contact Us</a></li>
 								<li><a href="">Order Status</a></li>
 								<li><a href="">Change Location</a></li>
-								<li><a href="">FAQâ€™s</a></li>
+								<li><a href="">FAQ’s</a></li>
 							</ul>
 						</div>
 					</div>
@@ -331,7 +438,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright Â© 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>
@@ -340,11 +447,10 @@
 	</footer><!--/Footer-->
 	
 
-  
+
     <script src="js/jquery.js"></script>
-	<script src="js/price-range.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
 </body>

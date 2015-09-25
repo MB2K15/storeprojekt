@@ -9,24 +9,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- * Created by Piotr on 2015-08-07.
- */
+
 @Controller
 public class MainController {
 
     @Autowired
     private UserDao userDao;
 
-    @RequestMapping("/index")
+    @RequestMapping("/test")
     public String setupForm(ModelMap map) {
         map.put("usr", new UserModel());
         return "user";
     }
-
+    
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public String doActions(@ModelAttribute UserModel usr) {
         userDao.save(usr);
-        return "login";
+        return "Result";
     }
 }

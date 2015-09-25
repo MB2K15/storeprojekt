@@ -15,7 +15,7 @@
     <body> 
         
         <h1>Sending...</h1>
-        <f:form action="send" method="post">
+        <f:form action = "send" method="post">
             <table>
                 <tr>
                     <td>To:</td>

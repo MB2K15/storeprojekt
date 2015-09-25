@@ -15,19 +15,21 @@
 <body>
 <h1>Twój koszyk:</h1>
 
-<table>
-    <th>
-    <td>Nazwa :</td>
-    <td>Kategoria:</td>
-    <td>Cena:</td>
-    </th>
+<table border="2" width="1000px" cellpadding="20px" style="border-collapse: collapse">
+    
     <c:forEach items='<%= request.getSession().getAttribute("lista")%>' var="p">
         <tr>
-            <td>${p.name}</td>
-            <td>${p.category}</td>
-            <td>${p.price}</td>
-        </tr>
-    </c:forEach>
+    <td>Nazwa :${p.name}</td>
+    <td>Kategoria:${p.category}</td>
+    <td>Cena:  ${p.price}</td>
+    <td>Iloœæ ${p.number}</td>
+    </tr>
+        </c:forEach>
+            
+        <tr>
+            <td colspan="5">
+                Total : $ <%=request.getSession().getAttribute("wszystko")%> </td>
+            </tr>
 </table>
 
 <a href="./form.htm">Continue shopping....</a>

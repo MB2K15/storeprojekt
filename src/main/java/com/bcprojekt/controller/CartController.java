@@ -39,8 +39,22 @@ public class CartController {
         m.put("product", new Product());
         return "form";
     }
-
+    
+    @RequestMapping(value = "/upcart")
+    public String upcart(){
+    
+    return "upcart";
+    }
+    
+    @RequestMapping(value="/Order")
+    public String result(){
+        
+        
+        return "Order";
+    }
+    
     @RequestMapping(value = "/addtocart", method = RequestMethod.POST)
+    
     public String addToCart(@RequestParam(value = "productId") Integer productId, HttpSession session) {
         List<Product> lista = (List<Product>) session.getAttribute("lista");
         if (lista == null) {
@@ -49,7 +63,8 @@ public class CartController {
         }
         Product product = productDao.findOne(productId);
         lista.add(product);
-        return "cart";
+        session.setAttribute("wszystko", getAll(lista));
+        return "upcart";
     }
 
 
@@ -60,6 +75,7 @@ public class CartController {
             lista = getAllProducts();
             session.setAttribute("product", lista);
         }
+        
         productDao.save(p);
         lista.add(p);
         session.setAttribute("wszystko", getAll(lista));

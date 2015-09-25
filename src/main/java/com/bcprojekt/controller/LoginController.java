@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author Matt
@@ -40,6 +41,15 @@ public class LoginController {
     public String test() {
         return "test";
     }
+    
+    @RequestMapping (value = "/shopping")
+    public String shopping(){
+    
+        return "shopping";
+    
+    }
+    
+    
 
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -51,7 +61,8 @@ public class LoginController {
             session.setAttribute("allproducts", allProducts);
             return "shopping";
         } else {
-            return "index";
+           
+            return "test";
         }
     }
 
