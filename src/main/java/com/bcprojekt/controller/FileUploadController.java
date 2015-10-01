@@ -39,7 +39,7 @@ public class FileUploadController {
                         new BufferedOutputStream(new FileOutputStream(destinationPath));
                 stream.write(bytes);
                 stream.close();
-                return "You successfully uploaded " + name + "!";
+                return "You successfully uploaded..... " + name + "!";
             } catch (Exception e) {
                 return "You failed to upload " + name + " => " + e.getMessage();
             }

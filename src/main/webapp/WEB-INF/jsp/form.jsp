@@ -56,9 +56,18 @@
     </f:form>
 
     <f:form method="POST" enctype="multipart/form-data"
-            action="/upload">
-        File to upload: <input type="file" name="file"><br/>
-        <input type="submit" value="Upload"> Press here to upload the file!
+            action="upload">
+        <table>
+            <tr>
+                <td>
+                    
+                     File to upload: <input type="file" name="file"><br/>
+                     <input type="submit" value="Upload"> Press here to upload the file!
+                </td>
+            </tr>
+      
+        
+        </table>
     </f:form>
 </div>
 
